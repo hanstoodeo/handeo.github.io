@@ -56,4 +56,4 @@ Every morning, I open tools built by tools, to solve problems that didn't exist 
 
 ---
 
-**What revolution are you building for?**
+**What revolution are you building for? The one happening now, or the one that hasn't arrived yet?**

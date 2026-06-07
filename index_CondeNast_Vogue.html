@@ -241,6 +241,8 @@
     .award-item { display:grid; grid-template-columns:72px 1fr; gap:var(--s2); padding:var(--s2) 0; border-bottom:1px solid var(--rule); align-items:start; }
     .award-year { font-family:var(--serif); font-size:0.875rem; font-style:italic; color:var(--muted); }
     .award-name { font-size:0.875rem; line-height:1.45; color:var(--black); }
+    .award-name a { color:var(--black); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:3px; transition:text-decoration-color 0.2s; }
+    .award-name a:hover { text-decoration-color:var(--black); }
 
     /* ── FOOTER ── */
     footer { border-top:1px solid var(--rule); padding:var(--s5) var(--s3); }
@@ -613,16 +615,89 @@
     <span class="section-sub">Awards & Patents</span>
   </div>
   <div class="award-list" role="list">
-    <div class="award-item" role="listitem"><span class="award-year">Patent</span><span class="award-name">Refrigerator Storage System Having a Display — US11016634B2, EP3504613B1, KR102346635B1, WO2018044091A1 · Filed 31/08/2017<span class="award-org" style="display:none"> USPTO / EPO</span></span></div>
-    <div class="award-item" role="listitem"><span class="award-year">Patent</span><span class="award-name">Smart Mirror Ornamental Design — USD941,042 · Issued 18 January 2022</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2024</span><span class="award-name">iF Design Award — Dual Zone Air Fryer & TOSHIBA Eaves Vacuum Pressure Rice Cooker</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2023</span><span class="award-name">iF Design Award — Food Icon Design & Full Surface Induction Cooktop UX</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2020</span><span class="award-name">IDEA Gold Award — BESPOKE Family Hub UX</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2020</span><span class="award-name">iF Design Award — BESPOKE Family Hub & Bixby Ambient AI</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2019</span><span class="award-name">iF Design Award — Family Hub 4.0 Family Board</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2019</span><span class="award-name">CES Innovation Award Honouree — Family Hub 4.0</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2018</span><span class="award-name">iF Design Award — Family Hub 3.0 UX</span></div>
-    <div class="award-item" role="listitem"><span class="award-year">2018</span><span class="award-name">CES Best of Innovations — Family Hub 3.0</span></div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">Patent</span>
+      <span class="award-name">
+        Refrigerator Storage System Having a Display —
+        <a href="https://patents.google.com/patent/US11016634B2" target="_blank" rel="noopener">US11016634B2</a>,
+        <a href="https://patents.google.com/patent/EP3504613B1" target="_blank" rel="noopener">EP3504613B1</a>,
+        <a href="https://patents.google.com/patent/KR102346635B1" target="_blank" rel="noopener">KR102346635B1</a>,
+        <a href="https://patents.google.com/patent/WO2018044091A1" target="_blank" rel="noopener">WO2018044091A1</a>
+        · Filed 31/08/2017
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">Patent</span>
+      <span class="award-name">
+        Smart Mirror Ornamental Design —
+        <a href="https://www.lens.org/lens/patent/023-928-264-825-341/frontpage" target="_blank" rel="noopener">USD941,042 S</a>,
+        <a href="https://www.lens.org/lens/patent/099-384-371-805-383/frontpage" target="_blank" rel="noopener">USD941,040 S</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2024</span>
+      <span class="award-name">
+        iF Design Award —
+        <a href="https://ifdesign.com//winner-ranking/project/dual-zone-air-fryer/620955" target="_blank" rel="noopener">Dual Zone Air Fryer</a>
+        &amp;
+        <a href="https://ifdesign.com//winner-ranking/project/toshiba-eaves-vacuum-pressure-rice-cooker/620630" target="_blank" rel="noopener">TOSHIBA Eaves Vacuum Pressure Rice Cooker</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2023</span>
+      <span class="award-name">
+        iF Design Award —
+        <a href="https://ifdesign.com//winner-ranking/project/food-icon-design/563412" target="_blank" rel="noopener">Food Icon Design</a>
+        &amp;
+        <a href="https://ifdesign.com//winner-ranking/project/full-surface-induction-cooktop-ux/563410" target="_blank" rel="noopener">Full Surface Induction Cooktop UX</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2020</span>
+      <span class="award-name">
+        IDEA Gold Award —
+        <a href="https://www.idsa.org/awards-recognition/idea/idea-gallery/bespoke-family-hub-ux/" target="_blank" rel="noopener">BESPOKE Family Hub UX</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2020</span>
+      <span class="award-name">
+        iF Design Award —
+        <a href="https://ifdesign.com//winner-ranking/project/bespoke-family-hub/282934" target="_blank" rel="noopener">BESPOKE Family Hub</a>
+        &amp;
+        <a href="https://ifdesign.com/en/winner-ranking/project/bixby-ambient/281989" target="_blank" rel="noopener">Bixby Ambient — Artificial Intelligence</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2019</span>
+      <span class="award-name">iF Design Award — Family Hub 4.0 Family Board</span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2019</span>
+      <span class="award-name">CES Innovation Award Honouree — Family Hub 4.0</span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2018</span>
+      <span class="award-name">
+        iF Design Award —
+        <a href="https://ifdesign.com//winner-ranking/project/family-hub-30-ux/234181" target="_blank" rel="noopener">Family Hub 3.0 UX</a>
+      </span>
+    </div>
+
+    <div class="award-item" role="listitem">
+      <span class="award-year">2018</span>
+      <span class="award-name">CES Best of Innovations — Family Hub 3.0</span>
+    </div>
+
   </div>
 </section>
 

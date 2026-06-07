@@ -383,16 +383,17 @@
   }
   .exp-meta { font-size: var(--t-footnote); color: var(--ink-3); }
 
-  /* Bullets — use flex so bullet stays top-aligned even when content wraps */
+  /* Bullets — use padding+negative indent so inline content flows naturally */
   .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: var(--sp-2); }
   .exp-bullets li {
     font-size: var(--t-subhead); line-height: 1.65; color: var(--ink-2);
-    display: flex; gap: var(--sp-1); align-items: flex-start;
+    padding-left: 1rem;
+    position: relative;
   }
   .exp-bullets li::before {
     content: '·'; color: var(--ink-3);
     font-size: 1.2rem; line-height: 1.5;
-    flex-shrink: 0; margin-top: 0;
+    position: absolute; left: 0; top: 0;
   }
   .exp-bullets li strong { color: var(--black, var(--ink)); font-weight: 500; }
 
@@ -799,8 +800,8 @@
             <div class="exp-meta">Mar 2026 – Present · London, UK</div>
           </div>
           <ul class="exp-bullets">
-            <li>Lead the architecture and governance of DICE, Entain's enterprise design system, covering component primitives, token configuration, and multi-brand extension patterns.</li>
-            <li>Own >UX and AI tooling strategy across the design org, establishing operating models and embedding AI-assisted workflows from rapid prototyping to design QA.</li>
+            <li>Lead the architecture and governance of <strong>DICE</strong>, Entain's enterprise design system, covering component primitives, token configuration, and multi-brand extension patterns.</li>
+            <li>Own <strong>UX and AI tooling strategy</strong> across the design org, establishing operating models and embedding AI-assisted workflows from rapid prototyping to design QA.</li>
             <li>Partner with engineering at the implementation layer using Figma, design tokens, and code review to protect design intent from concept through to production.</li>
             <li>Drive documentation and education to support federated design system adoption across product teams and markets.</li>
           </ul>
@@ -825,7 +826,7 @@
           </div>
           <ul class="exp-bullets">
             <li>Led a six-person design team scaling Dyson's global e-commerce experience, responsible for design quality, system consistency, and cross-market coherence across web and app.</li>
-            <li>Applied behavioural data and analytics to redesign key purchase journeys, contributing to a +2.7% uplift in order conversion (~£11M incremental revenue).</li>
+            <li>Applied behavioural data and analytics to redesign key purchase journeys, contributing to a <strong>+2.7% uplift in order conversion (~£11M incremental revenue)</strong>.</li>
             <li>Introduced AI-assisted design methods, reducing iteration cycles and improving decision velocity by 30%.</li>
             <li>Championed inclusive design and WCAG 2.2 compliance across all global touchpoints.</li>
             <li>Established token-based workflows and implementation review processes with engineering.</li>
@@ -852,9 +853,7 @@
             <div class="exp-meta">Nov 2015 – Mar 2020 · Seoul, South Korea</div>
           </div>
           <ul class="exp-bullets">
-            <li>Led a 25-person design team developing four generations of the Family Hub™ IoT experience, used by millions of households worldwide. Secured international patents and Smart Mirror designs
-                <br> <a href="https://patents.google.com/patent/US11016634B2" target="_blank" rel="noopener" class="pchip">US11016634B2</a> <a href="https://patents.google.com/patent/EP3504613B1" target="_blank" rel="noopener" class="pchip">EP3504613B1</a> <a href="https://patents.google.com/patent/KR102346635B1" target="_blank" rel="noopener" class="pchip">KR102346635B1</a> <a href="https://patents.google.com/patent/WO2018044091A1" target="_blank" rel="noopener" class="pchip">WO2018044091A1</a> <br>
-                <br> <a href="https://www.lens.org/lens/patent/023-928-264-825-341/frontpage" target="_blank" rel="noopener" class="pchip">USD941,042 S</a> <a href="https://www.lens.org/lens/patent/099-384-371-805-383/frontpage" target="_blank" rel="noopener" class="pchip">USD941,040 S</a>.</li> <br>
+            <li>Led a 25-person design team developing <strong>four generations of the Family Hub™ IoT experience</strong>, used by millions of households worldwide. Secured international patents <a href="https://patents.google.com/patent/US11016634B2" target="_blank" rel="noopener" class="pchip">US11016634B2</a> <a href="https://patents.google.com/patent/EP3504613B1" target="_blank" rel="noopener" class="pchip">EP3504613B1</a> <a href="https://patents.google.com/patent/KR102346635B1" target="_blank" rel="noopener" class="pchip">KR102346635B1</a> <a href="https://patents.google.com/patent/WO2018044091A1" target="_blank" rel="noopener" class="pchip">WO2018044091A1</a> and Smart Mirror designs <a href="https://www.lens.org/lens/patent/023-928-264-825-341/frontpage" target="_blank" rel="noopener" class="pchip">USD941,042 S</a> <a href="https://www.lens.org/lens/patent/099-384-371-805-383/frontpage" target="_blank" rel="noopener" class="pchip">USD941,040 S</a>.</li>
             <li>Designed and shipped complex multi-surface experiences integrating Bixby AI, Spotify, Amazon Dash, and Whisk, managing editorial hierarchy, interaction design, and system consistency at scale.</li>
             <li>Contributed to a design language that defined Samsung's smart home category leadership.</li>
             <li>Built and scaled a design culture with rigorous critique practices and a consistent bar for craft.</li>

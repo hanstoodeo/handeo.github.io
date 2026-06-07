@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Han Min Lee · Lead Product Designer</title>
   <meta name="description" content="Han Min Lee — Lead Product Designer with 20+ years shaping premium digital products at Samsung, Dyson and Entain. London, UK.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +34,7 @@
      + LoveFrom: fluid display type as hero
   ───────────────────────────────────────── */
   :root {
-    /* Palette — LoveFrom inspired */
+    /* Palette — LoveFrom inspired (Light mode) */
     --bg:        #f9f9f7;   /* warm off-white */
     --surface:   #f2f2f0;   /* slightly darker for card contrast */
     --ink:       #0a0a0a;   /* near-black */
@@ -40,6 +42,7 @@
     --ink-3:     #6b6b6b;   /* secondary — 5.7:1 on #f9f9f7 ✓ AA */
     --ink-4:     #8a8a8a;   /* captions — 3.6:1 on #f9f9f7 → large text only */
     --rule:      #e2e2de;
+    --nav-bg:    rgba(249,249,247,0.92);
 
     /* Type */
     --serif: 'Playfair Display', 'Times New Roman', Georgia, serif;
@@ -87,6 +90,48 @@
     min-height: 100vh;
   }
 
+  /* Theme toggle */
+  .theme-toggle {
+    display: flex; align-items: center; justify-content: center;
+    background: none; border: none; cursor: pointer;
+    min-width: 44px; min-height: 44px; padding: var(--sp-1);
+    color: var(--ink);
+    transition: color 0.2s;
+    vertical-align: middle;
+  }
+  .theme-toggle:hover { color: var(--ink-2); }
+  .theme-toggle svg { width: 20px; height: 20px; }
+  .theme-toggle .icon-moon { display: none; }
+  .theme-toggle .icon-sun { display: block; }
+
+  /* When dark mode is active via class */
+  html.dark .theme-toggle .icon-moon { display: block; }
+  html.dark .theme-toggle .icon-sun { display: none; }
+
+  /* Dark mode via class override — WCAG AA compliant
+     --ink:   #FFFFFF on #000000 = 21:1 ✓ AAA
+     --ink-2: #EBEBF5 on #000000 = 16.5:1 ✓ AAA
+     --ink-3: #A1A1A6 on #000000 = 7.3:1 ✓ AA (body text + UI)
+     --ink-4: #8E8E93 on #000000 = 5.5:1 ✓ AA (large text + icons)
+  */
+  html.dark {
+    --bg:        #000000;
+    --surface:   #1C1C1E;
+    --ink:       #FFFFFF;
+    --ink-2:     #EBEBF5;
+    --ink-3:     #A1A1A6;
+    --ink-4:     #8E8E93;
+    --rule:      #38383A;
+    --nav-bg:    rgba(0,0,0,0.92);
+  }
+  html.dark .btn-fill { background: #FFFFFF; color: #000000; }
+  html.dark .btn-fill:hover { background: #EBEBF5; }
+  html.dark .footer-cta { background: #FFFFFF; color: #000000; }
+  html.dark .footer-cta:hover { background: #EBEBF5; }
+  html.dark .skip-link { background: #FFFFFF; color: #000000; }
+  html.dark .pchip { background: var(--surface); border-color: var(--rule); color: var(--ink-2); }
+  html.dark .pchip:hover { background: var(--rule); }
+
   /* ─────────────────────────────────────────
      ACCESSIBILITY
   ───────────────────────────────────────── */
@@ -106,7 +151,7 @@
   ───────────────────────────────────────── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(249,249,247,0.92);
+    background: var(--nav-bg);
     backdrop-filter: blur(16px) saturate(1.2);
     -webkit-backdrop-filter: blur(16px) saturate(1.2);
     border-bottom: 1px solid var(--rule);
@@ -141,7 +186,9 @@
   .nav-menu {
     display: none;
     position: absolute; top: 100%; left: 0; right: 0;
-    background: rgba(249,249,247,0.98);
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
     border-bottom: 1px solid var(--rule);
     list-style: none;
     padding: var(--sp-1) var(--sp-3) var(--sp-2);
@@ -157,6 +204,7 @@
   }
   .nav-menu li:last-child a { border-bottom: none; }
   .nav-menu a:hover { color: var(--ink); }
+  .nav-theme-item { border-bottom: none; display: flex; align-items: center; padding: var(--sp-1) 0; }
 
   /* ─────────────────────────────────────────
      HERO — LoveFrom: type as landscape
@@ -516,6 +564,35 @@
   .footer-note { font-size: var(--t-footnote); color: var(--ink-3); }
 
   /* ─────────────────────────────────────────
+     DARK MODE — iOS HIG inspired, WCAG AA compliant
+     All text colors meet minimum 4.5:1 contrast on #000000
+     --ink:   #FFFFFF = 21:1 ✓ AAA
+     --ink-2: #EBEBF5 = 16.5:1 ✓ AAA
+     --ink-3: #A1A1A6 = 7.3:1 ✓ AA
+     --ink-4: #8E8E93 = 5.5:1 ✓ AA (large text/icons)
+  ───────────────────────────────────────── */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:        #000000;
+      --surface:   #1C1C1E;
+      --ink:       #FFFFFF;
+      --ink-2:     #EBEBF5;
+      --ink-3:     #A1A1A6;
+      --ink-4:     #8E8E93;
+      --rule:      #38383A;
+      --nav-bg:    rgba(0,0,0,0.92);
+    }
+
+    .btn-fill { background: #FFFFFF; color: #000000; }
+    .btn-fill:hover { background: #EBEBF5; }
+    .footer-cta { background: #FFFFFF; color: #000000; }
+    .footer-cta:hover { background: #EBEBF5; }
+    .skip-link { background: #FFFFFF; color: #000000; }
+    .pchip { background: var(--surface); border-color: var(--rule); color: var(--ink-2); }
+    .pchip:hover { background: var(--rule); }
+  }
+
+  /* ─────────────────────────────────────────
      ANIMATIONS
   ───────────────────────────────────────── */
   @keyframes rise {
@@ -553,18 +630,28 @@
       display: flex !important;
       position: static; background: transparent; border: none;
       padding: 0; flex-direction: row; gap: var(--sp-4);
+      align-items: center;
     }
     .nav-menu a {
       font-size: var(--t-caption1); font-weight: 400;
       min-height: auto; padding: 0; border: none;
       color: var(--ink-3); letter-spacing: 0.06em;
     }
+    .nav-menu li {
+      display: flex; align-items: center;
+    }
     .nav-menu li:last-child a {
+      color: var(--ink);
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .nav-menu li:nth-last-child(2) a {
       color: var(--ink);
       border-bottom: 1px solid var(--ink);
       padding-bottom: 1px;
     }
     .nav-menu a:hover { color: var(--ink); border-color: transparent; }
+    .nav-theme-item { padding: 0; }
 
     /* Hero: side-by-side */
     .hero {
@@ -624,16 +711,39 @@
 
 <!-- ── NAV ── -->
 <nav aria-label="Main navigation">
-  <a href="https://www.handeodesign.co.uk" target="_blank" rel="noopener" class="wordmark">handeodesign</a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="https://www.handeodesign.co.uk/news" target="_blank" rel="noopener" class="wordmark">handeodesign</a>
+  <div style="display:flex; align-items:center; gap:var(--sp-1);">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
   <ul class="nav-menu" id="nav-menu" role="list">
     <li><a href="#work">Work</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#recognition">Recognition</a></li>
-    <li><a href="https://www.handeodesign.co.uk" target="_blank" rel="noopener">Studio</a></li>
+    <li><a href="https://www.handeodesign.co.uk/news" target="_blank" rel="noopener">Studio</a></li>
     <li><a href="#contact">Get in touch</a></li>
+    <li class="nav-theme-item">
+      <a href="https://linkedin.com/in/hanminlee" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="theme-toggle" style="min-width:auto;">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px;">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </li>
+    <li class="nav-theme-item">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </li>
   </ul>
 </nav>
 
@@ -1008,6 +1118,44 @@
     toggle.setAttribute('aria-expanded', 'false');
     menu.classList.remove('open');
   }));
+
+  // Theme toggle — always launches in sync with macOS/iOS appearance settings
+  (function() {
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    let manualOverride = false;
+
+    function getSystemTheme() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+    }
+
+    // On load: always sync with system appearance
+    applyTheme(getSystemTheme());
+
+    // Toggle button — allows manual override for current session
+    themeBtn.addEventListener('click', () => {
+      manualOverride = true;
+      const isDark = html.classList.contains('dark');
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next);
+    });
+
+    // Listen for real-time system appearance changes (macOS/iOS auto-switch)
+    // Always follows system unless user has manually toggled in this session
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!manualOverride) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  })();
 </script>
 
 </body>

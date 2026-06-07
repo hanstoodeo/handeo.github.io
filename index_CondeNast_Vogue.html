@@ -397,9 +397,10 @@
   }
   .exp-bullets li strong { color: var(--black, var(--ink)); font-weight: 500; }
 
-  /* CV layout — mobile: stacked, desktop: sidebar */
+  /* CV layout — mobile: stacked, sidebar after experience */
   .cv-layout { display: flex; flex-direction: column; gap: var(--sp-5); }
   .cv-sidebar {
+    order: 2;
     padding-bottom: var(--sp-5);
     border-bottom: 1px solid var(--rule);
   }
@@ -585,9 +586,9 @@
     .work-card.span2 { grid-column: 1/-1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
     .work-card.span2 .work-stats { border-top: none; padding-top: 0; justify-content: flex-start; flex-direction: column; gap: var(--sp-4); }
 
-    /* CV: 2-col */
-    .cv-layout { display: grid; grid-template-columns: 220px 1fr; gap: var(--sp-6); }
-    .cv-sidebar { position: sticky; top: 76px; align-self: start; border-bottom: none; padding-bottom: 0; }
+    /* CV: 2-col — sidebar on the right */
+    .cv-layout { display: grid; grid-template-columns: 1fr 375px; gap: var(--sp-6); }
+    .cv-sidebar { position: sticky; top: 76px; align-self: start; border-bottom: none; padding-bottom: 0; order: 2; }
 
     /* Footer */
     .footer-inner { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-7); align-items: start; }
@@ -723,6 +724,7 @@
       </div>
       <div class="work-stats">
         <div class="stat-item"><div class="stat-n">4</div><div class="stat-l">Generations shipped</div></div>
+        <div class="stat-item"><div class="stat-n">6</div><div class="stat-l">Patents held</div></div>
         <div class="stat-item"><div class="stat-n">5×</div><div class="stat-l">iF Design Award</div></div>
         <div class="stat-item"><div class="stat-n">Gold</div><div class="stat-l">IDEA Award 2020</div></div>
       </div>

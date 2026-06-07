@@ -328,13 +328,12 @@
   .work-card {
     background: var(--bg);
     padding: var(--sp-5) var(--sp-3);
-    display: flex; flex-direction: column; gap: var(--sp-3);
+    display: flex; flex-direction: column; gap: var(--sp-2);
   }
 
   .work-eyebrow {
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: var(--sp-1);
-    margin-bottom: var(--sp-1);
   }
   .work-brand {
     font-size: var(--t-caption2);
@@ -351,16 +350,14 @@
     font-size: var(--t-title2);
     font-weight: 400; line-height: 1.2;
     color: var(--ink);
-    margin-bottom: var(--sp-1);
   }
 
   .work-body {
     font-size: var(--t-subhead);
     line-height: 1.65; color: var(--ink-2);
-    margin-bottom: var(--sp-1);
   }
 
-  .work-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--sp-1); }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
     font-size: var(--t-caption2);
     letter-spacing: 0.08em; text-transform: uppercase;
@@ -674,8 +671,9 @@
     /* Work: 2-col grid */
     .work-stack { display: grid; grid-template-columns: 1fr 1fr; }
     .work-card { padding: var(--sp-5); }
+    .work-stats { grid-template-columns: repeat(3, 1fr); }
     .work-card.span2 { grid-column: 1/-1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
-    .work-card.span2 .work-stats { border-top: none; padding-top: 0; justify-content: flex-start; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+    .work-card.span2 .work-stats { border-top: none; padding-top: 0; justify-content: flex-start; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
 
     /* CV: 2-col — sidebar on the right */
     .cv-layout { display: grid; grid-template-columns: 1fr 375px; gap: var(--sp-6); }
@@ -819,9 +817,8 @@
       <div class="work-tags"><span class="tag">E-Commerce UX</span><span class="tag">Design System</span><span class="tag">WCAG 2.2</span></div>
     </article>
 
-    <article class="work-card" role="listitem">
-      <div class="work-eyebrow"><span class="work-brand">Dyson · Impact</span></div>
-      <div class="work-stats" style="border-top:none; padding-top:0; margin-top: auto;">
+    <article class="work-card" role="listitem" style="justify-content: flex-start;">
+      <div class="work-stats" style="border-top:none; padding-top:0;">
         <div class="stat-item"><div class="stat-n">+2.7%</div><div class="stat-l">Order conversion</div></div>
         <div class="stat-item"><div class="stat-n">~£11M</div><div class="stat-l">Revenue impact</div></div>
         <div class="stat-item"><div class="stat-n">−30%</div><div class="stat-l">Iteration cycles</div></div>

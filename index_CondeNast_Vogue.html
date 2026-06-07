@@ -445,11 +445,12 @@
     font-size: var(--t-subhead); color: var(--ink); line-height: 1.45;
   }
   .award-nm a {
-    color: var(--ink); text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: border-color 0.2s;
+    color: var(--ink); text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 0.2s;
   }
-  .award-nm a:hover { border-color: var(--ink); }
+  .award-nm a:hover { text-decoration-color: var(--ink); }
 
   /* Patent chips */
   .pchip {
